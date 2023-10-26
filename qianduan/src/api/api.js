@@ -3,7 +3,7 @@ import axiosInstance from './index'
 
 const axios = axiosInstance
 
-export const postuser = (username,password) => {return axios.post(`http://localhost:8000/api/userapi/register/`, {'username': username, 'password':password})}
+export const postuser = (username,password,password1) => {return axios.post(`http://localhost:8000/api/userapi/register/`, {'username': username, 'password':password,'password1':password1})}
 
 export const login_postuser = (username,password) => {return axios.post(`http://localhost:8000/api/userapi/login/`, {'username': username, 'password':password})}
 

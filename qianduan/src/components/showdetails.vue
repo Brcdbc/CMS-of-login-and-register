@@ -1,7 +1,7 @@
 <template>
   <div class="article-detail">
     <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/main' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>文章欣赏</el-breadcrumb-item>
       
     </el-breadcrumb>

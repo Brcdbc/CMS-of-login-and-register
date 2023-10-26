@@ -11,6 +11,7 @@
         <el-form-item label="密码" prop="password">
           <el-input type="password" v-model="formData.password" placeholder="请输入密码"></el-input>
         </el-form-item>
+        
         <el-form-item>
           <el-button type="primary" @click="submit">注册</el-button>
           <el-button @click="gotoLogin" class="login-link">已有账号？点击这里登录</el-button>

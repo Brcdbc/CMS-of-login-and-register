@@ -65,6 +65,7 @@ class ApiUser(viewsets.ViewSet):
         try:
             username = request.data.get('username')
             password = request.data.get('password')
+            password1 = request.data.get('password1')
 
             # 验证用户名和密码是否符合要求
             if not username:
@@ -84,6 +85,13 @@ class ApiUser(viewsets.ViewSet):
                 }
                 return Response(result)
             # 对密码进行哈希处理
+            if password!=password1:
+                result = {
+                    "code": -1,
+                    "msg": "两次密码不一致",
+                    "body": ""
+                }
+                return Response(result)
             password = make_password(password) 
             User.objects.create(username=username, password=password)
             result = {

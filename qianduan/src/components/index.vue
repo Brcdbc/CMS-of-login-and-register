@@ -33,6 +33,9 @@
               <el-form-item label="密码">
                 <el-input type="password" v-model="formData.password" placeholder="请输入密码"></el-input>
               </el-form-item>
+              <el-form-item label="确认密码">
+                <el-input type="password" v-model="formData.password1" placeholder="请确保两次密码一致"></el-input>
+              </el-form-item>
               <el-form-item>
                 <el-button type="primary" @click="zhuce">注册</el-button>
               </el-form-item>
@@ -78,7 +81,8 @@ export default {
       formData: {
         username: '',
         email: '',
-        password: ''
+        password: '',
+        password1: ''
       }
     };
   },
@@ -101,7 +105,7 @@ export default {
     },
 
     zhuce() {
-          postuser(this.formData.username, this.formData.password).then((response) => {
+          postuser(this.formData.username, this.formData.password,this.formData.password1).then((response) => {
             this.$message({
               message: response.data.msg,
               type: response.data.msg === '注册成功' ? 'success' : 'error',
